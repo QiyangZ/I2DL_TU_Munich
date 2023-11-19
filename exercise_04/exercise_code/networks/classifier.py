@@ -122,13 +122,7 @@ class Classifier(Network):
         ########################################################################
 
 
-        input_x = None
-        if type(x) is not np.ndarray:
-            input_x = np.array([x])
-        else:
-            input_x = np.array(x)
-        sig = [1 / (1+np.e**-i) for i in input_x]
-        out = np.array(sig)
+        out = 1 / (1 + np.exp(-x))
 
         ########################################################################
         #                           END OF YOUR CODE                           #
